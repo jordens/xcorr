@@ -1,0 +1,30 @@
+<block>
+  <name>Unwrap</name>
+  <key>Unwrap</key>
+  <category>Custom</category>
+  <import>execfile("/home/rjordens/.grc_gnuradio/Unwrap.py")</import>
+  <make>Unwrap(
+    discont=$discont,
+)</make>
+  <callback>set_discont($discont)</callback>
+  <param>
+    <name>discont</name>
+    <key>discont</key>
+    <value>np.pi</value>
+    <type>raw</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>float</type>
+    <vlen>1</vlen>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>float</type>
+    <vlen>1</vlen>
+  </source>
+  <doc>
+
+/home/rjordens/.grc_gnuradio/Unwrap.py</doc>
+  <grc_source>/home/rjordens/work/nist/xcorr/Unwrap.grc</grc_source>
+</block>

@@ -1,0 +1,62 @@
+<block>
+  <name>LogStitch</name>
+  <key>LogStitch</key>
+  <category>Custom</category>
+  <import>execfile("/home/rjordens/.grc_gnuradio/LogStitch.py")</import>
+  <make>log_stitch_cc(
+    decim=$decim,
+    width=$width,
+    stages=$stages,
+    owidth=$owidth,
+)</make>
+  <param>
+    <name>decim</name>
+    <key>decim</key>
+    <value>10</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>width</name>
+    <key>width</key>
+    <value>128</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>stages</name>
+    <key>stages</key>
+    <value>5</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>owidth</name>
+    <key>owidth</key>
+    <value>512</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>cutoff</name>
+    <key>cutoff</key>
+    <value>.45</value>
+    <type>real</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+    <vlen>$width</vlen>
+    <nports>$stages</nports>
+  </sink>
+  <source>
+    <name>freqs</name>
+    <type>float</type>
+    <vlen>$owidth</vlen>
+  </source>
+  <source>
+    <name>out</name>
+    <type>complex</type>
+    <vlen>$owidth</vlen>
+  </source>
+  <doc>
+
+/home/rjordens/.grc_gnuradio/LogStitch.py</doc>
+  <grc_source>/home/rjordens/work/nist/xcorr/LogStitch.grc</grc_source>
+</block>

@@ -887,7 +887,7 @@
     <key>qtgui_time_sink_x</key>
     <param>
       <key>autoscale</key>
-      <value>True</value>
+      <value>False</value>
     </param>
     <param>
       <key>alias</key>

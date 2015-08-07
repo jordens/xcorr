@@ -93,7 +93,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1056, 441)</value>
+      <value>(1040, 441)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -133,7 +133,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(280, 281)</value>
+      <value>(264, 281)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -172,7 +172,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(304, 361)</value>
+      <value>(288, 361)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -223,7 +223,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(656, 491)</value>
+      <value>(640, 467)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -274,7 +274,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(864, 497)</value>
+      <value>(832, 473)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -325,7 +325,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1048, 505)</value>
+      <value>(1032, 505)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -376,7 +376,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 475)</value>
+      <value>(440, 467)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -701,7 +701,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 323)</value>
+      <value>(432, 323)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -776,7 +776,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(648, 323)</value>
+      <value>(632, 323)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -851,7 +851,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(840, 323)</value>
+      <value>(824, 323)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -902,7 +902,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(280, 201)</value>
+      <value>(264, 201)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -945,7 +945,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1088, 217)</value>
+      <value>(1072, 273)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -988,7 +988,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1088, 347)</value>
+      <value>(1216, 499)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1722,7 +1722,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>dev_addr</key>
-      <value>""</value>
+      <value>type=b100</value>
     </param>
     <param>
       <key>dev_args</key>
@@ -1734,7 +1734,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(24, 323)</value>
+      <value>(8, 315)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1905,7 +1905,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(856, 563)</value>
+      <value>(840, 547)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1956,7 +1956,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 547)</value>
+      <value>(432, 539)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2007,7 +2007,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(664, 555)</value>
+      <value>(640, 539)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2058,7 +2058,7 @@ output am (sig-ref)/(sig+ref) as real</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1032, 579)</value>
+      <value>(1032, 547)</value>
     </param>
     <param>
       <key>_rotation</key>

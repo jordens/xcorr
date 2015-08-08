@@ -151,7 +151,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>3</value>
+      <value>2</value>
     </param>
   </block>
   <block>
@@ -420,7 +420,7 @@
     </param>
     <param>
       <key>bw</key>
-      <value>f_sample/decim</value>
+      <value>f_sample/decim**(3-stage)</value>
     </param>
     <param>
       <key>alias</key>
@@ -656,7 +656,7 @@
     </param>
     <param>
       <key>freqhalf</key>
-      <value>True</value>
+      <value>False</value>
     </param>
     <param>
       <key>tr_chan</key>
@@ -1234,7 +1234,7 @@
     </param>
     <param>
       <key>srate</key>
-      <value>f_sample/decim</value>
+      <value>f_sample/decim**(3-stage)</value>
     </param>
     <param>
       <key>tr_chan</key>

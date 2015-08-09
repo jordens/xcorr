@@ -2,7 +2,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Ampm Cli
-# Generated: Fri Aug  7 21:36:11 2015
+# Generated: Sat Aug  8 19:51:21 2015
 ##################################################
 
 import os
@@ -24,7 +24,7 @@ import time
 
 class ampm_cli(gr.top_block):
 
-    def __init__(self, decim=50, decim_df=.2, decim_f=.4, device_address="type=b200", device_arguments="master_clock_rate=30e6", df_ref=0, f_sample=0.5e6, f_sig=5e6, g_ref=50, g_sig=50, n_samples=1<<24, name="test", pass_tags=False, port_base=6880):
+    def __init__(self, decim=50, decim_df=.2, decim_f=.4, device_address="type=b100", device_arguments="fpga=usrp_b100_fpga_2rx.bin", df_ref=0, f_sample=0.5e6, f_sig=5e6, g_ref=50, g_sig=50, n_samples=1<<24, name="test", pass_tags=False, port_base=6880):
         gr.top_block.__init__(self, "Ampm Cli")
 
         ##################################################
@@ -56,6 +56,8 @@ class ampm_cli(gr.top_block):
         ##################################################
         self.zeromq_sub_source_0_2_0 = zeromq.sub_source(gr.sizeof_float, decim**0, "tcp://localhost:{}".format(port_base + 9), 100, pass_tags)
         self.zeromq_sub_source_0_2 = zeromq.sub_source(gr.sizeof_gr_complex, decim**0, "tcp://localhost:{}".format(port_base + 0), 100, pass_tags)
+        self.zeromq_sub_source_0_1 = zeromq.sub_source(gr.sizeof_gr_complex, decim**1, "tcp://localhost:6881", 100, pass_tags)
+        self.zeromq_sub_source_0 = zeromq.sub_source(gr.sizeof_gr_complex, decim**2, "tcp://localhost:6882", 100, pass_tags)
         self.zeromq_pub_sink_0_1_2 = zeromq.pub_sink(gr.sizeof_float, decim**0, "tcp://*:{}".format(port_base + 9), 100, pass_tags)
         self.zeromq_pub_sink_0_1_1 = zeromq.pub_sink(gr.sizeof_gr_complex, decim**1, "tcp://*:{}".format(port_base + 1), 100, pass_tags)
         self.zeromq_pub_sink_0_1_0_0 = zeromq.pub_sink(gr.sizeof_gr_complex, decim**3, "tcp://*:{}".format(port_base + 3), 100, pass_tags)
@@ -79,10 +81,16 @@ class ampm_cli(gr.top_block):
         self.blocks_stream_to_vector_0_0_0 = blocks.stream_to_vector(gr.sizeof_float*1, decim**0)
         self.blocks_stream_to_vector_0_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, decim**0)
         self.blocks_stream_to_vector_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, decim**1)
+        self.blocks_head_0_1 = blocks.head(gr.sizeof_gr_complex*decim**1, n_samples/decim**1)
+        self.blocks_head_0 = blocks.head(gr.sizeof_gr_complex*decim**2, n_samples/decim**2)
         self.blocks_file_meta_sink_0_3_0 = blocks.file_meta_sink(gr.sizeof_float*decim**0, "{}_w.bin".format(filename), f_sample, decim**3, blocks.GR_FILE_FLOAT, False, 1<<20, "", True)
         self.blocks_file_meta_sink_0_3_0.set_unbuffered(False)
         self.blocks_file_meta_sink_0_3 = blocks.file_meta_sink(gr.sizeof_gr_complex*decim**0, "{}_0.bin".format(filename), f_sample, decim**3, blocks.GR_FILE_FLOAT, True, 1<<20, "", True)
         self.blocks_file_meta_sink_0_3.set_unbuffered(False)
+        self.blocks_file_meta_sink_0_1 = blocks.file_meta_sink(gr.sizeof_gr_complex*decim**1, "{}_1.bin".format(filename), f_sample, decim**2, blocks.GR_FILE_FLOAT, True, 1<<20, "", True)
+        self.blocks_file_meta_sink_0_1.set_unbuffered(False)
+        self.blocks_file_meta_sink_0 = blocks.file_meta_sink(gr.sizeof_gr_complex*decim**2, "{}_2.bin".format(filename), f_sample, decim**1, blocks.GR_FILE_FLOAT, True, 1<<20, "", True)
+        self.blocks_file_meta_sink_0.set_unbuffered(False)
         self.Ampm_0 = Ampm(
             decim=decim,
             decim_df=decim_df,
@@ -97,6 +105,8 @@ class ampm_cli(gr.top_block):
         self.connect((self.Ampm_0, 4), (self.blocks_stream_to_vector_0_0_0, 0))    
         self.connect((self.Ampm_0, 1), (self.blocks_stream_to_vector_0_1, 0))    
         self.connect((self.Ampm_0, 0), (self.blocks_stream_to_vector_0_1_0, 0))    
+        self.connect((self.blocks_head_0, 0), (self.blocks_file_meta_sink_0, 0))    
+        self.connect((self.blocks_head_0_1, 0), (self.blocks_file_meta_sink_0_1, 0))    
         self.connect((self.blocks_stream_to_vector_0, 0), (self.zeromq_pub_sink_0_1_1, 0))    
         self.connect((self.blocks_stream_to_vector_0_0, 0), (self.zeromq_pub_sink_0_1, 0))    
         self.connect((self.blocks_stream_to_vector_0_0_0, 0), (self.zeromq_pub_sink_0_1_2, 0))    
@@ -104,6 +114,8 @@ class ampm_cli(gr.top_block):
         self.connect((self.blocks_stream_to_vector_0_1_0, 0), (self.zeromq_pub_sink_0_1_0_0, 0))    
         self.connect((self.uhd_usrp_source_0, 0), (self.Ampm_0, 0))    
         self.connect((self.uhd_usrp_source_0, 1), (self.Ampm_0, 1))    
+        self.connect((self.zeromq_sub_source_0, 0), (self.blocks_head_0, 0))    
+        self.connect((self.zeromq_sub_source_0_1, 0), (self.blocks_head_0_1, 0))    
         self.connect((self.zeromq_sub_source_0_2, 0), (self.blocks_file_meta_sink_0_3, 0))    
         self.connect((self.zeromq_sub_source_0_2_0, 0), (self.blocks_file_meta_sink_0_3_0, 0))    
 
@@ -116,6 +128,8 @@ class ampm_cli(gr.top_block):
         self.set_filename("{:s}_f0{:.5g}_df{:.5g}_fs{:.5g}_d{:.5g}".format(self.name, self.f_sig/1e6, self.df_ref, self.f_sample/1e6, self.decim))
         self.set_info({"name":self.name, "f_sig":self.f_sig, "df_ref":self.df_ref, "f_sample":self.f_sample, "decim":self.decim})
         self.Ampm_0.set_decim(self.decim)
+        self.blocks_head_0.set_length(self.n_samples/self.decim**2)
+        self.blocks_head_0_1.set_length(self.n_samples/self.decim**1)
 
     def get_decim_df(self):
         return self.decim_df
@@ -190,6 +204,8 @@ class ampm_cli(gr.top_block):
 
     def set_n_samples(self, n_samples):
         self.n_samples = n_samples
+        self.blocks_head_0.set_length(self.n_samples/self.decim**2)
+        self.blocks_head_0_1.set_length(self.n_samples/self.decim**1)
 
     def get_name(self):
         return self.name
@@ -222,6 +238,8 @@ class ampm_cli(gr.top_block):
 
     def set_filename(self, filename):
         self.filename = filename
+        self.blocks_file_meta_sink_0.open("{}_2.bin".format(self.filename))
+        self.blocks_file_meta_sink_0_1.open("{}_1.bin".format(self.filename))
         self.blocks_file_meta_sink_0_3.open("{}_0.bin".format(self.filename))
         self.blocks_file_meta_sink_0_3_0.open("{}_w.bin".format(self.filename))
 
@@ -234,9 +252,9 @@ if __name__ == '__main__':
         help="Set decim_df [default=%default]")
     parser.add_option("", "--decim-f", dest="decim_f", type="eng_float", default=eng_notation.num_to_str(.4),
         help="Set decim_f [default=%default]")
-    parser.add_option("", "--device-address", dest="device_address", type="string", default="type=b200",
+    parser.add_option("", "--device-address", dest="device_address", type="string", default="type=b100",
         help="Set device_address [default=%default]")
-    parser.add_option("", "--device-arguments", dest="device_arguments", type="string", default="master_clock_rate=30e6",
+    parser.add_option("", "--device-arguments", dest="device_arguments", type="string", default="fpga=usrp_b100_fpga_2rx.bin",
         help="Set device_arguments [default=%default]")
     parser.add_option("", "--df-ref", dest="df_ref", type="eng_float", default=eng_notation.num_to_str(0),
         help="Set df_ref [default=%default]")

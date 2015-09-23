@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.8'?>
+<?grc format='1' created='3.7.9'?>
 <flow_graph>
   <timestamp>Mon Aug  3 18:10:42 2015</timestamp>
   <block>
@@ -210,7 +210,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(440, 683)</value>
+      <value>(472, 731)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -273,11 +273,78 @@
     </param>
     <param>
       <key>file</key>
+      <value>"{}_3.bin".format(filename)</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(464, 595)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_file_meta_sink_0_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>max_seg_size</key>
+      <value>1&lt;&lt;20</value>
+    </param>
+    <param>
+      <key>rel_rate</key>
+      <value>decim**0</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>f_sample</value>
+    </param>
+    <param>
+      <key>unbuffered</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>decim**3</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_file_meta_sink</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>detached</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>extra_dict</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>file</key>
       <value>"{}_1.bin".format(filename)</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(440, 851)</value>
+      <value>(472, 899)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -466,7 +533,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 731)</value>
+      <value>(280, 779)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -517,7 +584,58 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 899)</value>
+      <value>(272, 643)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_head_0_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_items</key>
+      <value>n_samples/decim**3</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>decim**3</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_head</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(280, 947)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -948,49 +1066,6 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(232, 99)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>device_address</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value></value>
-    </param>
-    <param>
-      <key>short_id</key>
-      <value></value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>string</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>type=b200</value>
-    </param>
-  </block>
-  <block>
-    <key>parameter</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
       <value>(232, 195)</value>
     </param>
     <param>
@@ -1030,11 +1105,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(360, 99)</value>
+      <value>(232, 99)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1042,7 +1117,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>device_arguments</value>
+      <value>device_address</value>
     </param>
     <param>
       <key>label</key>
@@ -1058,7 +1133,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>master_clock_rate=30e6</value>
+      <value>type=b200</value>
     </param>
   </block>
   <block>
@@ -1073,7 +1148,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1102,6 +1177,49 @@
     <param>
       <key>value</key>
       <value>"fpga=usrp_b100_fpga_2rx.bin"</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(360, 99)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>device_arguments</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>string</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>master_clock_rate=30e6</value>
     </param>
   </block>
   <block>
@@ -1187,7 +1305,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>0.5e6</value>
+      <value>1e6</value>
     </param>
   </block>
   <block>
@@ -1273,7 +1391,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>50</value>
+      <value>0</value>
     </param>
   </block>
   <block>
@@ -1316,7 +1434,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>50</value>
+      <value>0</value>
     </param>
   </block>
   <block>
@@ -1510,6 +1628,14 @@
       <value>f_sig</value>
     </param>
     <param>
+      <key>dc_offs_enb0</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb0</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain0</key>
       <value>False</value>
     </param>
@@ -1528,6 +1654,14 @@
     <param>
       <key>center_freq10</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb10</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb10</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain10</key>
@@ -1550,6 +1684,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb11</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb11</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain11</key>
       <value>False</value>
     </param>
@@ -1568,6 +1710,14 @@
     <param>
       <key>center_freq12</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb12</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb12</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain12</key>
@@ -1590,6 +1740,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb13</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb13</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain13</key>
       <value>False</value>
     </param>
@@ -1608,6 +1766,14 @@
     <param>
       <key>center_freq14</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb14</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb14</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain14</key>
@@ -1630,6 +1796,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb15</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb15</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain15</key>
       <value>False</value>
     </param>
@@ -1648,6 +1822,14 @@
     <param>
       <key>center_freq16</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb16</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb16</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain16</key>
@@ -1670,6 +1852,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb17</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb17</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain17</key>
       <value>False</value>
     </param>
@@ -1688,6 +1878,14 @@
     <param>
       <key>center_freq18</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb18</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb18</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain18</key>
@@ -1710,6 +1908,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb19</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb19</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain19</key>
       <value>False</value>
     </param>
@@ -1728,6 +1934,14 @@
     <param>
       <key>center_freq1</key>
       <value>f_sig + df_ref</value>
+    </param>
+    <param>
+      <key>dc_offs_enb1</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb1</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain1</key>
@@ -1750,6 +1964,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb20</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb20</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain20</key>
       <value>False</value>
     </param>
@@ -1768,6 +1990,14 @@
     <param>
       <key>center_freq21</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb21</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb21</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain21</key>
@@ -1790,6 +2020,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb22</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb22</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain22</key>
       <value>False</value>
     </param>
@@ -1808,6 +2046,14 @@
     <param>
       <key>center_freq23</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb23</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb23</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain23</key>
@@ -1830,6 +2076,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb24</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb24</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain24</key>
       <value>False</value>
     </param>
@@ -1848,6 +2102,14 @@
     <param>
       <key>center_freq25</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb25</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb25</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain25</key>
@@ -1870,6 +2132,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb26</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb26</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain26</key>
       <value>False</value>
     </param>
@@ -1888,6 +2158,14 @@
     <param>
       <key>center_freq27</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb27</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb27</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain27</key>
@@ -1910,6 +2188,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb28</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb28</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain28</key>
       <value>False</value>
     </param>
@@ -1928,6 +2214,14 @@
     <param>
       <key>center_freq29</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb29</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb29</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain29</key>
@@ -1950,6 +2244,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb2</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb2</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain2</key>
       <value>False</value>
     </param>
@@ -1968,6 +2270,14 @@
     <param>
       <key>center_freq30</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb30</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb30</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain30</key>
@@ -1990,6 +2300,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb31</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb31</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain31</key>
       <value>False</value>
     </param>
@@ -2008,6 +2326,14 @@
     <param>
       <key>center_freq3</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb3</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb3</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain3</key>
@@ -2030,6 +2356,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb4</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb4</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain4</key>
       <value>False</value>
     </param>
@@ -2048,6 +2382,14 @@
     <param>
       <key>center_freq5</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb5</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb5</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain5</key>
@@ -2070,6 +2412,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb6</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb6</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain6</key>
       <value>False</value>
     </param>
@@ -2088,6 +2438,14 @@
     <param>
       <key>center_freq7</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb7</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb7</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain7</key>
@@ -2110,6 +2468,14 @@
       <value>0</value>
     </param>
     <param>
+      <key>dc_offs_enb8</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb8</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>norm_gain8</key>
       <value>False</value>
     </param>
@@ -2128,6 +2494,14 @@
     <param>
       <key>center_freq9</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>dc_offs_enb9</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>iq_imbal_enb9</key>
+      <value>""</value>
     </param>
     <param>
       <key>norm_gain9</key>
@@ -2292,6 +2666,10 @@
     <param>
       <key>samp_rate</key>
       <value>f_sample</value>
+    </param>
+    <param>
+      <key>hide_cmd_port</key>
+      <value>False</value>
     </param>
     <param>
       <key>stream_args</key>
@@ -2589,7 +2967,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(24, 715)</value>
+      <value>(56, 763)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2628,6 +3006,65 @@
     <key>zeromq_sub_source</key>
     <param>
       <key>address</key>
+      <value>tcp://localhost:6883</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(48, 627)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>zeromq_sub_source_0_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>pass_tags</key>
+      <value>pass_tags</value>
+    </param>
+    <param>
+      <key>timeout</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>decim**3</value>
+    </param>
+  </block>
+  <block>
+    <key>zeromq_sub_source</key>
+    <param>
+      <key>address</key>
       <value>tcp://localhost:6881</value>
     </param>
     <param>
@@ -2648,7 +3085,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(24, 883)</value>
+      <value>(56, 931)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2707,7 +3144,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(688, 739)</value>
+      <value>(888, 739)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2766,7 +3203,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(688, 899)</value>
+      <value>(888, 899)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2838,6 +3275,12 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>blocks_head_0_0</source_block_id>
+    <sink_block_id>blocks_file_meta_sink_0_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>blocks_head_0_1</source_block_id>
     <sink_block_id>blocks_file_meta_sink_0_1</sink_block_id>
     <source_key>0</source_key>
@@ -2888,6 +3331,12 @@
   <connection>
     <source_block_id>zeromq_sub_source_0</source_block_id>
     <sink_block_id>blocks_head_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>zeromq_sub_source_0_0</source_block_id>
+    <sink_block_id>blocks_head_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

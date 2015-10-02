@@ -9,10 +9,6 @@
       <value></value>
     </param>
     <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
       <key>window_size</key>
       <value>1280, 1024</value>
     </param>
@@ -93,7 +89,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>2,0,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -156,7 +152,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>1,1,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -219,7 +215,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>6,1,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -270,7 +266,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>1e6</value>
+      <value>.96e6</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -282,7 +278,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>2,1,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -309,7 +305,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>6e9</value>
+      <value>150e6</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -321,7 +317,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>1,0,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -353,7 +349,7 @@
     </param>
     <param>
       <key>stop</key>
-      <value>6e9</value>
+      <value>6.1e9</value>
     </param>
     <param>
       <key>rangeType</key>
@@ -372,7 +368,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>0</value>
+      <value>g_sig</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -384,7 +380,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>0,0,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -435,7 +431,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>0</value>
+      <value>30</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -447,7 +443,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>0,1,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -498,7 +494,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>0</value>
+      <value>60</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -510,7 +506,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>6,0,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -624,11 +620,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(40, 963)</value>
+      <value>(112, 739)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -671,7 +667,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>freq</key>
@@ -679,7 +675,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(16, 843)</value>
+      <value>(136, 619)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -707,7 +703,7 @@
     </param>
     <param>
       <key>samp_rate</key>
-      <value>f_sample/10</value>
+      <value>f_sample</value>
     </param>
     <param>
       <key>waveform</key>
@@ -1055,7 +1051,50 @@
     </param>
     <param>
       <key>value</key>
-      <value>"master_clock_rate=30e6"</value>
+      <value>"master_clock_rate=30.72e6"</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(104, 115)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>f_dsp</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>eng_float</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>2e6</value>
     </param>
   </block>
   <block>
@@ -1149,7 +1188,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>3,1,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1420,7 +1459,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>5,0,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1655,7 +1694,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>3,0,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2014,7 +2053,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>4,0,1,2</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3005,11 +3044,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(288, 867)</value>
+      <value>(360, 643)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3129,7 +3168,7 @@
     </param>
     <param>
       <key>samp_rate</key>
-      <value>f_sample/10</value>
+      <value>f_sample</value>
     </param>
     <param>
       <key>hide_cmd_port</key>
@@ -3145,7 +3184,7 @@
     </param>
     <param>
       <key>sync</key>
-      <value></value>
+      <value>sync</value>
     </param>
     <param>
       <key>len_tag_name</key>
@@ -3172,7 +3211,7 @@
     </param>
     <param>
       <key>center_freq0</key>
-      <value>f_sig</value>
+      <value>uhd.tune_request(f_sig , f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL)</value>
     </param>
     <param>
       <key>dc_offs_enb0</key>
@@ -3480,7 +3519,7 @@
     </param>
     <param>
       <key>center_freq1</key>
-      <value>f_sig + df_ref</value>
+      <value>uhd.tune_request(f_sig + df_ref, f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL)</value>
     </param>
     <param>
       <key>dc_offs_enb1</key>
@@ -4228,7 +4267,7 @@
     </param>
     <param>
       <key>sync</key>
-      <value></value>
+      <value>sync</value>
     </param>
     <param>
       <key>otw</key>

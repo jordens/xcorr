@@ -194,7 +194,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>freq</key>
@@ -1630,7 +1630,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>2e6</value>
+      <value>0</value>
     </param>
   </block>
   <block>
@@ -1673,7 +1673,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>960e3</value>
+      <value>960e3*4</value>
     </param>
   </block>
   <block>
@@ -2688,7 +2688,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -2851,11 +2851,11 @@
     </param>
     <param>
       <key>bw0</key>
-      <value>0</value>
+      <value>30.72e6</value>
     </param>
     <param>
       <key>center_freq0</key>
-      <value>uhd.tune_request(f_sig , f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL)</value>
+      <value>uhd.tune_request(target_freq=f_sig , dsp_freq=f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL)</value>
     </param>
     <param>
       <key>dc_offs_enb0</key>
@@ -3159,11 +3159,11 @@
     </param>
     <param>
       <key>bw1</key>
-      <value>0</value>
+      <value>30.72e6</value>
     </param>
     <param>
       <key>center_freq1</key>
-      <value>uhd.tune_request(f_sig + df_ref, f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL)</value>
+      <value>uhd.tune_request(target_freq=f_sig + df_ref, dsp_freq=f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL)</value>
     </param>
     <param>
       <key>dc_offs_enb1</key>

@@ -259,6 +259,69 @@
     </param>
   </block>
   <block>
+    <key>variable_qtgui_range</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>6e6</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(64, 195)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value>7,0,1,1</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>f_dsp</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>min_len</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>orient</key>
+      <value>Qt.Horizontal</value>
+    </param>
+    <param>
+      <key>start</key>
+      <value>-30.72e6</value>
+    </param>
+    <param>
+      <key>step</key>
+      <value>1e6</value>
+    </param>
+    <param>
+      <key>stop</key>
+      <value>30.72e6</value>
+    </param>
+    <param>
+      <key>rangeType</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>widget</key>
+      <value>counter_slider</value>
+    </param>
+  </block>
+  <block>
     <key>variable_qtgui_entry</key>
     <param>
       <key>comment</key>
@@ -266,7 +329,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>.96e6</value>
+      <value>.96e6*4</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -305,7 +368,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>150e6</value>
+      <value>50e6</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -620,7 +683,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -667,7 +730,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>freq</key>
@@ -1066,7 +1129,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1094,7 +1157,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>2e6</value>
+      <value>30.72e6/2</value>
     </param>
   </block>
   <block>
@@ -3044,7 +3107,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -3203,15 +3266,15 @@
     </param>
     <param>
       <key>ant0</key>
-      <value></value>
+      <value>RX2</value>
     </param>
     <param>
       <key>bw0</key>
-      <value>0</value>
+      <value>30.72e6</value>
     </param>
     <param>
       <key>center_freq0</key>
-      <value>uhd.tune_request(f_sig , f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL)</value>
+      <value>uhd.tune_request(target_freq=f_sig , dsp_freq=f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL)</value>
     </param>
     <param>
       <key>dc_offs_enb0</key>
@@ -3511,15 +3574,15 @@
     </param>
     <param>
       <key>ant1</key>
-      <value></value>
+      <value>RX2</value>
     </param>
     <param>
       <key>bw1</key>
-      <value>0</value>
+      <value>30.72e6</value>
     </param>
     <param>
       <key>center_freq1</key>
-      <value>uhd.tune_request(f_sig + df_ref, f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL)</value>
+      <value>uhd.tune_request(target_freq=f_sig + df_ref, dsp_freq=f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL)</value>
     </param>
     <param>
       <key>dc_offs_enb1</key>

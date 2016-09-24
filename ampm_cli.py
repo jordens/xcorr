@@ -2,7 +2,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Ampm Cli
-# Generated: Wed Sep 30 18:46:43 2015
+# Generated: Fri Oct 23 15:34:02 2015
 ##################################################
 
 import os
@@ -10,7 +10,6 @@ import sys
 sys.path.append(os.environ.get('GRC_HIER_PATH', os.path.expanduser('~/.grc_gnuradio')))
 
 from Ampm import Ampm  # grc-generated hier_block
-from gnuradio import analog
 from gnuradio import blocks
 from gnuradio import eng_notation
 from gnuradio import gr
@@ -26,7 +25,7 @@ import time
 
 class ampm_cli(gr.top_block):
 
-    def __init__(self, decim=50, decim_df=.2, decim_f=.4, device_address="type=b200", device_arguments="master_clock_rate=30.72e6", df_ref=0, df_test=10e3, f_dsp=2e6, f_sample=960e3, f_sig=6e9, g_ref=0, g_sig=0, g_test=49, n_samples=1<<24, name="test", pass_tags=False, port_base=6880):
+    def __init__(self, decim=50, decim_df=.2, decim_f=.4, device_address="type=b200", device_arguments="master_clock_rate=30.72e6", df_ref=0, df_test=10e3, f_sample=960e3*4, f_sig=6e9, g_ref=0, g_sig=0, g_test=49, n_samples=1<<24, name="test", pass_tags=False, port_base=6880, f_dsp=0):
         gr.top_block.__init__(self, "Ampm Cli")
 
         ##################################################
@@ -39,7 +38,6 @@ class ampm_cli(gr.top_block):
         self.device_arguments = device_arguments
         self.df_ref = df_ref
         self.df_test = df_test
-        self.f_dsp = f_dsp
         self.f_sample = f_sample
         self.f_sig = f_sig
         self.g_ref = g_ref
@@ -49,6 +47,7 @@ class ampm_cli(gr.top_block):
         self.name = name
         self.pass_tags = pass_tags
         self.port_base = port_base
+        self.f_dsp = f_dsp
 
         ##################################################
         # Variables
@@ -79,23 +78,12 @@ class ampm_cli(gr.top_block):
         self.uhd_usrp_source_0_0.set_subdev_spec("A:A A:B", 0)
         self.uhd_usrp_source_0_0.set_time_unknown_pps(uhd.time_spec())
         self.uhd_usrp_source_0_0.set_samp_rate(f_sample)
-        self.uhd_usrp_source_0_0.set_center_freq(uhd.tune_request(f_sig , f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL), 0)
+        self.uhd_usrp_source_0_0.set_center_freq(uhd.tune_request(target_freq=f_sig , dsp_freq=f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL), 0)
         self.uhd_usrp_source_0_0.set_gain(g_sig, 0)
-        self.uhd_usrp_source_0_0.set_center_freq(uhd.tune_request(f_sig + df_ref, f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL), 1)
+        self.uhd_usrp_source_0_0.set_bandwidth(30.72e6, 0)
+        self.uhd_usrp_source_0_0.set_center_freq(uhd.tune_request(target_freq=f_sig + df_ref, dsp_freq=f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL), 1)
         self.uhd_usrp_source_0_0.set_gain(g_ref, 1)
-        self.uhd_usrp_sink_0 = uhd.usrp_sink(
-        	",".join((device_address, device_arguments)),
-        	uhd.stream_args(
-        		cpu_format="fc32",
-        		channels=range(2),
-        	),
-        )
-        self.uhd_usrp_sink_0.set_time_unknown_pps(uhd.time_spec())
-        self.uhd_usrp_sink_0.set_samp_rate(f_sample)
-        self.uhd_usrp_sink_0.set_center_freq(f_sig, 0)
-        self.uhd_usrp_sink_0.set_gain(g_test, 0)
-        self.uhd_usrp_sink_0.set_center_freq(f_sig, 1)
-        self.uhd_usrp_sink_0.set_gain(g_test, 1)
+        self.uhd_usrp_source_0_0.set_bandwidth(30.72e6, 1)
         self.blocks_stream_to_vector_0_1_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, decim**3)
         self.blocks_stream_to_vector_0_1 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, decim**2)
         self.blocks_stream_to_vector_0_0_0 = blocks.stream_to_vector(gr.sizeof_float*1, decim**0)
@@ -115,14 +103,10 @@ class ampm_cli(gr.top_block):
         self.blocks_file_meta_sink_0_0.set_unbuffered(False)
         self.blocks_file_meta_sink_0 = blocks.file_meta_sink(gr.sizeof_gr_complex*decim**2, "{}_2.bin".format(filename), f_sample, decim**1, blocks.GR_FILE_FLOAT, True, 1<<20, "", True)
         self.blocks_file_meta_sink_0.set_unbuffered(False)
-        self.blocks_ctrlport_probe2_c_0_2_2 = blocks.ctrlport_probe2_c("d3", "diff3", 1024, gr.DISPTIME)
-        self.blocks_ctrlport_probe2_c_0_2_1 = blocks.ctrlport_probe2_c("d2", "diff2", 1024, gr.DISPTIME)
-        self.blocks_ctrlport_probe2_c_0_2_0 = blocks.ctrlport_probe2_c("d1", "diff1", 1024, gr.DISPTIME)
         self.blocks_ctrlport_probe2_c_0_1 = blocks.ctrlport_probe2_c("d0", "diff0", 1024, gr.DISPTIME)
         self.blocks_ctrlport_probe2_c_0_0 = blocks.ctrlport_probe2_c("b", "input b", 1024, gr.DISPTIME)
         self.blocks_ctrlport_probe2_c_0 = blocks.ctrlport_probe2_c("a", "input a", 1024, gr.DISPTIME)
         self.blocks_ctrlport_monitor_0 = not True or monitor()
-        self.analog_sig_source_x_0 = analog.sig_source_c(f_sample, analog.GR_COS_WAVE, df_test, 1, 0)
         self.Ampm_0 = Ampm(
             decim=decim,
             decim_df=decim_df,
@@ -133,16 +117,11 @@ class ampm_cli(gr.top_block):
         # Connections
         ##################################################
         self.connect((self.Ampm_0, 0), (self.blocks_ctrlport_probe2_c_0_1, 0))    
-        self.connect((self.Ampm_0, 1), (self.blocks_ctrlport_probe2_c_0_2_0, 0))    
-        self.connect((self.Ampm_0, 2), (self.blocks_ctrlport_probe2_c_0_2_1, 0))    
-        self.connect((self.Ampm_0, 3), (self.blocks_ctrlport_probe2_c_0_2_2, 0))    
         self.connect((self.Ampm_0, 2), (self.blocks_stream_to_vector_0, 0))    
         self.connect((self.Ampm_0, 3), (self.blocks_stream_to_vector_0_0, 0))    
         self.connect((self.Ampm_0, 4), (self.blocks_stream_to_vector_0_0_0, 0))    
         self.connect((self.Ampm_0, 1), (self.blocks_stream_to_vector_0_1, 0))    
         self.connect((self.Ampm_0, 0), (self.blocks_stream_to_vector_0_1_0, 0))    
-        self.connect((self.analog_sig_source_x_0, 0), (self.uhd_usrp_sink_0, 0))    
-        self.connect((self.analog_sig_source_x_0, 0), (self.uhd_usrp_sink_0, 1))    
         self.connect((self.blocks_head_0, 0), (self.blocks_file_meta_sink_0, 0))    
         self.connect((self.blocks_head_0_0, 0), (self.blocks_file_meta_sink_0_0, 0))    
         self.connect((self.blocks_head_0_1, 0), (self.blocks_file_meta_sink_0_1, 0))    
@@ -208,22 +187,13 @@ class ampm_cli(gr.top_block):
         self.df_ref = df_ref
         self.set_filename("{:s}_f0{:.5g}_df{:.5g}_fs{:.5g}_d{:.5g}".format(self.name, self.f_sig/1e6, self.df_ref, self.f_sample/1e6, self.decim))
         self.set_info({"name":self.name, "f_sig":self.f_sig, "df_ref":self.df_ref, "f_sample":self.f_sample, "decim":self.decim})
-        self.uhd_usrp_source_0_0.set_center_freq(uhd.tune_request(self.f_sig + self.df_ref, self.f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL), 1)
+        self.uhd_usrp_source_0_0.set_center_freq(uhd.tune_request(target_freq=self.f_sig + self.df_ref, dsp_freq=self.f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL), 1)
 
     def get_df_test(self):
         return self.df_test
 
     def set_df_test(self, df_test):
         self.df_test = df_test
-        self.analog_sig_source_x_0.set_frequency(self.df_test)
-
-    def get_f_dsp(self):
-        return self.f_dsp
-
-    def set_f_dsp(self, f_dsp):
-        self.f_dsp = f_dsp
-        self.uhd_usrp_source_0_0.set_center_freq(uhd.tune_request(self.f_sig , self.f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL), 0)
-        self.uhd_usrp_source_0_0.set_center_freq(uhd.tune_request(self.f_sig + self.df_ref, self.f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL), 1)
 
     def get_f_sample(self):
         return self.f_sample
@@ -232,8 +202,6 @@ class ampm_cli(gr.top_block):
         self.f_sample = f_sample
         self.set_filename("{:s}_f0{:.5g}_df{:.5g}_fs{:.5g}_d{:.5g}".format(self.name, self.f_sig/1e6, self.df_ref, self.f_sample/1e6, self.decim))
         self.set_info({"name":self.name, "f_sig":self.f_sig, "df_ref":self.df_ref, "f_sample":self.f_sample, "decim":self.decim})
-        self.analog_sig_source_x_0.set_sampling_freq(self.f_sample)
-        self.uhd_usrp_sink_0.set_samp_rate(self.f_sample)
         self.uhd_usrp_source_0_0.set_samp_rate(self.f_sample)
 
     def get_f_sig(self):
@@ -243,10 +211,8 @@ class ampm_cli(gr.top_block):
         self.f_sig = f_sig
         self.set_filename("{:s}_f0{:.5g}_df{:.5g}_fs{:.5g}_d{:.5g}".format(self.name, self.f_sig/1e6, self.df_ref, self.f_sample/1e6, self.decim))
         self.set_info({"name":self.name, "f_sig":self.f_sig, "df_ref":self.df_ref, "f_sample":self.f_sample, "decim":self.decim})
-        self.uhd_usrp_sink_0.set_center_freq(self.f_sig, 0)
-        self.uhd_usrp_sink_0.set_center_freq(self.f_sig, 1)
-        self.uhd_usrp_source_0_0.set_center_freq(uhd.tune_request(self.f_sig , self.f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL), 0)
-        self.uhd_usrp_source_0_0.set_center_freq(uhd.tune_request(self.f_sig + self.df_ref, self.f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL), 1)
+        self.uhd_usrp_source_0_0.set_center_freq(uhd.tune_request(target_freq=self.f_sig , dsp_freq=self.f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL), 0)
+        self.uhd_usrp_source_0_0.set_center_freq(uhd.tune_request(target_freq=self.f_sig + self.df_ref, dsp_freq=self.f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL), 1)
 
     def get_g_ref(self):
         return self.g_ref
@@ -269,10 +235,6 @@ class ampm_cli(gr.top_block):
 
     def set_g_test(self, g_test):
         self.g_test = g_test
-        self.uhd_usrp_sink_0.set_gain(self.g_test, 0)
-        	
-        self.uhd_usrp_sink_0.set_gain(self.g_test, 1)
-        	
 
     def get_n_samples(self):
         return self.n_samples
@@ -302,6 +264,14 @@ class ampm_cli(gr.top_block):
 
     def set_port_base(self, port_base):
         self.port_base = port_base
+
+    def get_f_dsp(self):
+        return self.f_dsp
+
+    def set_f_dsp(self, f_dsp):
+        self.f_dsp = f_dsp
+        self.uhd_usrp_source_0_0.set_center_freq(uhd.tune_request(target_freq=self.f_sig , dsp_freq=self.f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL), 0)
+        self.uhd_usrp_source_0_0.set_center_freq(uhd.tune_request(target_freq=self.f_sig + self.df_ref, dsp_freq=self.f_dsp, rf_freq_policy=uhd.tune_request.POLICY_AUTO, dsp_freq_policy=uhd.tune_request.POLICY_MANUAL), 1)
 
     def get_info(self):
         return self.info
@@ -337,9 +307,7 @@ if __name__ == '__main__':
         help="Set df_ref [default=%default]")
     parser.add_option("", "--df-test", dest="df_test", type="eng_float", default=eng_notation.num_to_str(10e3),
         help="Set df_test [default=%default]")
-    parser.add_option("", "--f-dsp", dest="f_dsp", type="eng_float", default=eng_notation.num_to_str(2e6),
-        help="Set f_dsp [default=%default]")
-    parser.add_option("", "--f-sample", dest="f_sample", type="eng_float", default=eng_notation.num_to_str(960e3),
+    parser.add_option("", "--f-sample", dest="f_sample", type="eng_float", default=eng_notation.num_to_str(960e3*4),
         help="Set f_sample [default=%default]")
     parser.add_option("", "--f-sig", dest="f_sig", type="eng_float", default=eng_notation.num_to_str(6e9),
         help="Set f_sig [default=%default]")
@@ -357,10 +325,12 @@ if __name__ == '__main__':
         help="Set pass_tags [default=%default]")
     parser.add_option("", "--port-base", dest="port_base", type="intx", default=6880,
         help="Set port_base [default=%default]")
+    parser.add_option("", "--f-dsp", dest="f_dsp", type="eng_float", default=eng_notation.num_to_str(0),
+        help="Set f_dsp [default=%default]")
     (options, args) = parser.parse_args()
     if gr.enable_realtime_scheduling() != gr.RT_OK:
         print "Error: failed to enable realtime scheduling."
-    tb = ampm_cli(decim=options.decim, decim_df=options.decim_df, decim_f=options.decim_f, device_address=options.device_address, device_arguments=options.device_arguments, df_ref=options.df_ref, df_test=options.df_test, f_dsp=options.f_dsp, f_sample=options.f_sample, f_sig=options.f_sig, g_ref=options.g_ref, g_sig=options.g_sig, g_test=options.g_test, n_samples=options.n_samples, name=options.name, pass_tags=options.pass_tags, port_base=options.port_base)
+    tb = ampm_cli(decim=options.decim, decim_df=options.decim_df, decim_f=options.decim_f, device_address=options.device_address, device_arguments=options.device_arguments, df_ref=options.df_ref, df_test=options.df_test, f_sample=options.f_sample, f_sig=options.f_sig, g_ref=options.g_ref, g_sig=options.g_sig, g_test=options.g_test, n_samples=options.n_samples, name=options.name, pass_tags=options.pass_tags, port_base=options.port_base, f_dsp=options.f_dsp)
     tb.start()
     (tb.blocks_ctrlport_monitor_0).start()
     try:
